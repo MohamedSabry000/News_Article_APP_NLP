@@ -6,6 +6,10 @@ const FormData = require("form-data");
 
 // Sentiment API URL
 const BaseURL = "https://api.meaningcloud.com/sentiment-2.1";
+// The API Key, this is free key, for me, just for deploying the app, it's recommended to use env for your keys
+const API_KEY= "077ce2d29afb68e7b1e7456ffd5ff49f";
+// Port Number
+const PORT = 8082;
 
 // environment variables
 const dotenv = require('dotenv');
@@ -31,13 +35,14 @@ app.get('/', function (req, res) {
 });
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('Example app listening on port 8081!');
+app.listen(8082, function () {
+    console.log(`Example app listening on port ${PORT}!`);
 });
 
 app.post('/test', async (req, res) => {
     const formData = new FormData();
-    formData.append("key", process.env.API_KEY);
+    // formData.append("key", process.env.API_KEY);
+    formData.append("key", API_KEY);
     formData.append("url", req.body.url);
     formData.append("lang", "en");
     const requestOptions = {

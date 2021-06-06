@@ -1,9 +1,9 @@
 const handleSubmit = async (event) => {
+    
     event.preventDefault();
     const url = { url: document.getElementById('name').value };
     if (Client.is_URL_Valid(url.url)) {
-        const response = await Client.postFormDataToserver('http://localhost:8081/test', url);
-
+        const response = await Client.postFormDataToserver('http://localhost:8082/test', url);
         // check the polarity
         const score_tag =
             response.score_tag === "P+"
