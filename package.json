@@ -2,7 +2,7 @@
   "name": "example-project",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "/",
+  "homepage": ".",
   "scripts": {
     "test": "jest",
     "start": "node src/server/index.js",
